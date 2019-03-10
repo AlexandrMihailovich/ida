@@ -2,18 +2,14 @@ import jQuery from 'jquery';
 
 jQuery(function() {
     var $ = jQuery;
-    var last = '';
+    var prev = '';
 
-    $( ".cart__input-number" )
+    $( ".card__input-number" )
         .on( "beforeinput", function( event ) {
-            last = event.target.value;
-            
-            console.log('beforeinput', event.target.value);
+            prev = event.target.value;
         })
         .on( "input", function( event ) {
             var $this = $( this );
-            
-            console.log('input', event.target.value);
             
             var reg = /^\d+$/;
             
@@ -21,7 +17,7 @@ jQuery(function() {
                 return false;
             }
             if(!reg.test(event.target.value)) {
-                event.target.value = last;
+                event.target.value = prev;
             }
             if(event.target.value.length === 4) {
                 $this.next().focus();
