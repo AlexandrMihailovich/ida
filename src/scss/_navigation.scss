@@ -1,0 +1,34 @@
+/* navigation begin */
+.navigation {
+    background: #191c24;
+    width: 33.33%;
+    float: left;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.36;
+    text-align: justify;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15); 
+    .navigation__link {
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      padding: 25px 27px;
+      font-weight: bold;
+    }
+  .navigation__list {
+    padding: 0;
+    margin: 0; 
+  }
+  .navigation__item {
+    &:hover {
+      background: #1f2229; 
+    }
+  }
+  .navigation__item_action_exit {
+    border-top: 1px solid #fff;
+    box-sizing: border-box; 
+  }
+  .navigation__item_state_active {
+    background: #2a2d37; }
+  }
+  /* navigation end */

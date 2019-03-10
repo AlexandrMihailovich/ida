@@ -1,0 +1,118 @@
+/* cart begin */
+.cart {
+    background: #f7f8f8;
+    width: 320px;
+    height: 198px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e4e9ee;
+    border-radius: 10px;
+    padding: 14px;
+    position: relative;
+    
+    .cart__label {
+      display: block;
+      font-size: 16px;
+    }
+    .cart__input {
+      padding-left: 10px;
+      padding-right: 10px; 
+      height: 38px;
+  
+      font-family: 'Open Sans',Helvetica,sans-serif;
+      font-weight: normal;
+      border: 1px solid #e4e9ee;
+      font-size: 16px;
+      background: #fff;
+    }
+  
+    .cart_cholder {
+      margin-top: 12px;
+      .cart__input-cholder {
+        width: 297px;
+        &::placeholder {
+          font-size: 15px;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+  
+    .cart__number {
+      .cart__input-number {
+        width: 41px;
+        margin-right: 7px;
+      }
+      .cart__label-number {
+        padding-bottom: 4px; 
+      }
+    }
+  
+    .cart__data {
+      padding-top: 17px; 
+      .cart__input-data  {
+        border-radius: 0;
+        height: 30px;
+        padding: 8px 0 0 13px;
+        .ui-icon-triangle-1-s {
+          background-position: -65px 0px;
+        }
+      }
+      .cart__mouth {
+        width: 55px;
+        margin-right: 4px;
+        /*.ui-selectmenu-icon.ui-icon.ui-icon-triangle-1-s {
+          background-position: 42px center;
+          background-repeat: no-repeat;
+          background-size: 17px;
+          background-image: url(../img/down-arrow.svg); }*/
+      }
+      .cart__year {
+        width: 71px;
+      }
+      .cart__label-data {
+        padding-bottom: 6px; 
+      }
+    }
+  
+    .cart__line {
+      margin-left: -14px;
+      margin-right: -14px;
+      margin-top: 11px;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 42px;
+        background: #e4e9ee; 
+      }
+    }
+  
+    .cart__cvv {
+      text-align: right;
+      input {
+        width: 116px;
+      }
+      label {
+        padding-bottom: 3px;
+        padding-top: 17px;
+        padding-right: 9px; 
+      }
+    }
+  }
+  .cart-front {
+    margin-left: 1px;
+    margin-top: 21px;
+    z-index: 2;
+    padding-top: 22px; 
+  }
+  
+  .cart-back {
+    margin-left: 196px;
+    margin-top: -216px;
+    width: 340px;
+    height: 206px;
+    z-index: 1; 
+  }
+  
+  /* cart end */
+  
