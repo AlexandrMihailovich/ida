@@ -1,0 +1,18 @@
+@font-face {
+  font-family: '2204';
+  src: url('2204.eot');
+  src: url('2204.eot?#iefix') format('embedded-opentype'),
+       url('2204.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('OpenSans-Bold.svg#OpenSans-Bold') format('svg'),
+       url('OpenSans-Bold.ttf') format('truetype'),
+       url('OpenSans-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
