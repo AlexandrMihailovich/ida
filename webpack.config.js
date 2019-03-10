@@ -31,7 +31,18 @@ module.exports = {
                 }
             }]
             //loader: 'url-loader?limit=100000'
-        }
+        },
+        {
+          test: /\.(jpe?g|gif|png)$/,
+          use: [{
+              loader: 'file-loader',
+              options: {
+                  name: '[name].[ext]',
+                  outputPath: 'img/',
+                  publicPath: url => `img/${url}`
+              }
+          }]
+      }
 	  ]
 	},
 	plugins: [

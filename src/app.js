@@ -7,6 +7,14 @@ import jQuery from 'jquery';
 
 
 jQuery(function() {
-    jQuery( "select" ).selectmenu();
-    //jQuery('p').css('color', 'red');
+    jQuery( ".cart__mouth" ).selectmenu({
+        classes: {
+          "ui-selectmenu-button": "cart__data-select cart__mouth"
+        }
+      });
+    jQuery( ".cart__year" ).selectmenu({
+        classes: {
+          "ui-selectmenu-button": "cart__data-select cart__year"
+        }
+      });
 });
