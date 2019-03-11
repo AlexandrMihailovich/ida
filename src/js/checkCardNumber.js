@@ -10,7 +10,7 @@ jQuery(function() {
         })
         .on( "input", function( event ) {
             var $this = $( this );
-            
+            console.log($this);
             var reg = /^\d+$/;
             
             if(!event.target.value) {
@@ -20,7 +20,7 @@ jQuery(function() {
                 event.target.value = prev;
             }
             if(event.target.value.length === 4) {
-                $this.next().focus();
+                $this.next(".card__input-number").focus();
             }
         });
 });
