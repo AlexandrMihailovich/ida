@@ -2,14 +2,14 @@ import jQuery from 'jquery';
 
 (function($) {
     'use strict';
-    const   EMPTY_VALUE = 1,
-            SHORT_VALUE = 2,
-            LONG_VALUE  = 3,
-            REG_ERROR   = 4,
-            ACCEPTED    = 0;
+    const   EMPTY_VALUE = 'EMPTY_VALUE',
+            SHORT_VALUE = 'SHORT_VALUE',
+            LONG_VALUE  = 'LONG_VALUE',
+            REG_ERROR   = 'REG_ERROR',
+            ACCEPTED    = 'ACCEPTED';
 
     var defaultHandler = function (element, val, prevVal, e) {
-        console.log(element, val, prevVal, e);
+        //console.log(element, val, prevVal, e);
     };
 
     function test(val, prevVal, settings, $this, regExp) {
@@ -111,18 +111,20 @@ import jQuery from 'jquery';
                 var settings = $this.data('settings');
                 var opt = $.extend({
                     'success'		: function ($this) {
-                        console.log('SUCCESS', $this);
+                        //console.log('SUCCESS', $this);
                     },
                     'error'		    : function ($this, result) {
-                        console.log('ERROR', result, $this);
+                        //console.log('ERROR', result, $this);
                     }
                     }, settings , options);
                 //console.log(opt);
 
                 var result = test($this.val(), $this.val(), opt, $this, settings.testRegExp);
                 if(result === ACCEPTED) {
+                    settings.accepted($this, $this.val(), $this.val());
                     opt.success($this);
                 } else {
+                    settings.rejected($this, $this.val(), $this.val());
                     opt.error($this, result);
                 }
 

@@ -86,12 +86,22 @@ th {
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 999;
   .notify__item {
     color: #fff;
+    position: relative;
     background: #191c24;
     width: 130px;
-    font-size: 12px;
+    
     padding: 10px;
     margin: 10px;
+    z-index: 999;
+  }
+  .notify__title {
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .notify__content {
+    font-size: 12px;
   }
 }

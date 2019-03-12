@@ -3,7 +3,7 @@ import 'normalize.css'
 import jQuery from 'jquery';
 
 import './js/jq-selectmenu';
-//import './js/checkCardNumber.js';
+import './js/notify';
 //import './js/checkCardCVV';
 import './js/inputProcessor'
 
@@ -23,7 +23,36 @@ jQuery(function() {
         }
       });
 
-    var inputError = function(element) {
+    var notify = jQuery('.notify').notify();
+
+    function createNitify(elemet, code) {
+
+        const settings = elemet.data('settings');
+
+        const emes = {
+            'ACCEPTED'      : "Успех", 
+            'EMPTY_VALUE'   : "Поле не должно быть пустым", 
+            'LONG_VALUE'    : "Значение должно быть не более " + settings.maxLength + ' символов.',
+            'SHORT_VALUE'   : "Значение должно быть не менее " + settings.minLength + ' символов.',
+            'REG_ERROR'     : "Неверный формат значения",
+        };
+    
+        const errorMessages = {
+            "number-input-1" : emes,
+            "number-input-2" : emes,
+            "number-input-3" : emes,
+            "number-input-4" : emes,
+            "holder-input"   : emes,
+            "cvv-input"      : emes
+        };
+
+        var title = elemet.attr('title');
+        var content = errorMessages[elemet.attr('name')][code];
+
+        notify.notify('show', {'title' : title, 'content' : content});
+    }
+
+    var inputRejected = function(element) {
         element.addClass("card__input-error");
     };
     var inputAccepted = function(element) {
@@ -32,23 +61,16 @@ jQuery(function() {
 
     var number = jQuery( ".card__input-number" ).inputProcessor({
         'accepted'		: inputAccepted,
-        'rejected'		: inputError,
+        'rejected'		: inputRejected,
         'reachEnd'      : function(element) {
             element.next(".card__input-number").focus();
         },
-        'shortLength'    : inputError,
-        'emptyValue'     : inputError,
-        'overLength'     : inputError
-    });//.inputProcessor('test');
+    });
 
     var cvv = jQuery( ".card__input-cvv" ).inputProcessor({
-        'maxLength'     : 3,
         'minLength'     : 3,
         'accepted'		: inputAccepted,
-        'rejected'		: inputError,
-        'shortLength'   : inputError,
-        'overLength'    : inputError,
-        'emptyValue'     : inputError,
+        'rejected'		: inputRejected,
     });
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
@@ -56,33 +78,22 @@ jQuery(function() {
         'testRegExp'		: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
         'processRegExp'		: /^[a-zA-Z\s]+$/,
         'accepted'		: inputAccepted,
-        'rejected'		: inputError,
-        'shortLength'   : inputError,
-        'overLength'    : inputError,
-        'emptyValue'     : inputError,
+        'rejected'		: inputRejected,
     });
 
+
+
     jQuery( "form" ).submit(function(e) {
-        //jQuery( ".notify" ).html("");
+        jQuery( ".notify" ).html("");
 
         var option = {
-            'success'		: function ($this) {
-                console.log('ACCEPTED', $this);
+            'success'		: function (elemet) {
+                //console.log('ACCEPTED', $this);
             },
-            'error'		: function ($this, result) {
-                console.log('ERROR', result, $this);
+            'error'		: function (elemet, code) {
+                //console.log('ERROR', elemet, code);
 
-
-                var item = jQuery( "<div>" )
-                    .addClass('notify__item')
-                    .text('ERROR: ' + result)
-                    .prependTo(".notify");
-
-                setTimeout(function() {
-                    item.fadeOut(function() {
-                        jQuery(this).remove();
-                    });
-                }, 3000);
+                createNitify(elemet, code)
 
                 e.preventDefault();
             },
@@ -90,8 +101,6 @@ jQuery(function() {
         number.inputProcessor('test', option);
         cvv.inputProcessor('test', option);
         holder.inputProcessor('test', option);
-        //e.preventDefault();
-        //return false;
     });
 });
 
