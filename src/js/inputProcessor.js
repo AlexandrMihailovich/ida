@@ -1,8 +1,12 @@
+/*!
+ * InputProcessor v 0.0.1
+ */
+
 import jQuery from 'jquery';
 
 (function($) {
     'use strict';
-    const   EMPTY_VALUE = 'EMPTY_VALUE',
+    var   EMPTY_VALUE = 'EMPTY_VALUE',
             SHORT_VALUE = 'SHORT_VALUE',
             LONG_VALUE  = 'LONG_VALUE',
             REG_ERROR   = 'REG_ERROR',

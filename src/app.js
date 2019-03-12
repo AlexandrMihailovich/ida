@@ -14,30 +14,30 @@ import './scss/main.scss';
 jQuery(function() {
     jQuery( ".card__mouth" ).selectmenu({
         classes: {
-          "ui-selectmenu-button": "card__input card__input-data card__mouth"
+          "ui-selectmenu-button": "card__input card__input-date card__mouth"
         }
       });
     jQuery( ".card__year" ).selectmenu({
         classes: {
-          "ui-selectmenu-button": "card__input card__input-data card__year"
+          "ui-selectmenu-button": "card__input card__input-date card__year"
         }
       });
 
-    var notify = jQuery('.notify').notify();
+    //var notify = jQuery('.notify').notify();
 
-    function createNitify(elemet, code) {
+    function createNotify(elemet, code) {
 
-        const settings = elemet.data('settings');
+        var settings = elemet.data('settings');
 
-        const emes = {
-            'ACCEPTED'      : "Успех", 
-            'EMPTY_VALUE'   : "Поле не должно быть пустым", 
+        var emes = {
+            'ACCEPTED'      : "Успех",
+            'EMPTY_VALUE'   : "Это поле нужно заполнить обязательно.",
             'LONG_VALUE'    : "Значение должно быть не более " + settings.maxLength + ' символов.',
             'SHORT_VALUE'   : "Значение должно быть не менее " + settings.minLength + ' символов.',
             'REG_ERROR'     : "Неверный формат значения",
         };
-    
-        const errorMessages = {
+
+        var errorMessages = {
             "number-input-1" : emes,
             "number-input-2" : emes,
             "number-input-3" : emes,
@@ -49,7 +49,8 @@ jQuery(function() {
         var title = elemet.attr('title');
         var content = errorMessages[elemet.attr('name')][code];
 
-        notify.notify('show', {'title' : title, 'content' : content});
+        //notify.notify('show', {'title' : title, 'content' : content});
+        jQuery('.notify').notify('show', {'title' : title, 'content' : content});
     }
 
     var inputRejected = function(element) {
@@ -69,31 +70,31 @@ jQuery(function() {
 
     var cvv = jQuery( ".card__input-cvv" ).inputProcessor({
         'minLength'     : 3,
+        'maxLength'     : 4,
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
     });
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
         'minLength'     : 3,
-        'testRegExp'		: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
-        'processRegExp'		: /^[a-zA-Z\s]+$/,
+        'testRegExp'	: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
+        'processRegExp'	: /^[a-zA-Z\s]+$/,
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
     });
-
 
 
     jQuery( "form" ).submit(function(e) {
         jQuery( ".notify" ).html("");
 
         var option = {
-            'success'		: function (elemet) {
+            'success'		: function (element) {
                 //console.log('ACCEPTED', $this);
             },
-            'error'		: function (elemet, code) {
+            'error'		: function (element, code) {
                 //console.log('ERROR', elemet, code);
 
-                createNitify(elemet, code)
+                createNotify(element, code)
 
                 e.preventDefault();
             },

@@ -1,0 +1,27 @@
+@mixin linear-gradient($start-color, $end-color) {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05,$start-color), color-stop(1, $end-color));
+  background:-moz-linear-gradient(top, $start-color 0%, $end-color 100%);
+  background:-webkit-linear-gradient(top, $start-color 0%, $end-color 100%);
+  background:-o-linear-gradient(top, $start-color 0%, $end-color 100%);
+  background:-ms-linear-gradient(top, $start-color 0%, $end-color 100%);
+  background:linear-gradient(to bottom, $start-color 0%, $end-color 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}',GradientType=0);
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius:$radius;
+  -webkit-border-radius:$radius;
+  border-radius:$radius;
+}
+
+@mixin box-shadow-inset($x, $y, $blur, $spread, $color) {
+  -moz-box-shadow:inset $x $y $blur $spread $color;
+  -webkit-box-shadow:inset $x $y $blur $spread $color;
+  box-shadow:inset $x $y $blur $spread $color;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}

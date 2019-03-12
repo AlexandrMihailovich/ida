@@ -29,18 +29,18 @@ import jQuery from 'jquery';
                 var item = $( "<div>" ).addClass('notify__item');
                 var itemTitle = $( "<p>" ).addClass('notify__title');
                 var itemContent = $( "<p>" ).addClass('notify__content');
-                
+
                 itemTitle.text(opt.title).prependTo(item);
                 itemContent.text(opt.content).appendTo(item);
 
                 $this.prepend(item);
-        
+
                 item.click(function() {
                     item.fadeOut(function() {
                         item.remove();
                     });
-                })
-        
+                });
+
                 setTimeout(function() {
                     item.fadeOut(function() {
                         item.remove();
