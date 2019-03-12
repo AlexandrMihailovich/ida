@@ -5,14 +5,11 @@ jQuery(function() {
     var prev = '';
 
     $( ".card__input-number" )
-        .on( "beforeinput", function( event ) {
-            prev = event.target.value;
-        })
         .on( "input", function( event ) {
             var $this = $( this );
             console.log($this);
             var reg = /^\d+$/;
-            
+
             if(!event.target.value) {
                 return false;
             }
@@ -22,5 +19,6 @@ jQuery(function() {
             if(event.target.value.length === 4) {
                 $this.next(".card__input-number").focus();
             }
+            prev = event.target.value;
         });
 });

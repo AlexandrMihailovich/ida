@@ -30,7 +30,6 @@ module.exports = {
                     publicPath: url => `fonts/${url}`
                 }
             }]
-            //loader: 'url-loader?limit=100000'
         },
         {
           test: /\.(jpe?g|gif|png)$/,
