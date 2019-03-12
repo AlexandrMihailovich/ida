@@ -46,63 +46,67 @@
 
 			<div class="content__data">
 				<h2 class="form__header">Данные банковской карты</h2>
-				<form action="">
+				<form action="http://localhost:8080/">
 					<div class="card card-front">
 						<div class="card__number">
-							<label class="card__label card__label-number">Номер карты</label>
-							<input class="card__input card__input-number" type="text" size="4" maxlength="4">
-							<input class="card__input card__input-number" type="text" size="4" maxlength="4">
-							<input class="card__input card__input-number" type="text" size="4" maxlength="4">
-							<input class="card__input card__input-number" type="text" size="4" maxlength="4">
+							<label class="card__label card__label-number" for="number-input-1">Номер карты</label>
+							<input class="card__input card__input-number" id="number-input-1" type="text" size="4" maxlength="4">
+							<input class="card__input card__input-number" id="number-input-2" type="text" size="4" maxlength="4">
+							<input class="card__input card__input-number" id="number-input-3" type="text" size="4" maxlength="4">
+							<input class="card__input card__input-number" id="number-input-4" type="text" size="4" maxlength="4">
 						</div>
 						<div class="card__data">
-							<label class="card__label card__label-data">Срок действия</label>
-							<select class="card__input card__input-data card__mouth">
+							<label class="card__label card__label-data" for="mouth-input">Срок действия</label>
+							<select class="card__input card__input-data card__mouth" id="mouth-input">
 								<option>04</option>
 								<option>05</option>
 							</select>
-							<select class="card__input card__input-data card__year">
+							<select class="card__input card__input-data card__year" id="year-input">
 								<option>2018</option>
 								<option>2019</option>
 							</select>
 						</div>
 						<div class="card_holder">
-							<input class="card__input card__input-holder" type="text" placeholder="Держатель карты">
+							<input class="card__input card__input-holder" id="holder-input" type="text" placeholder="Держатель карты">
 						</div>
 					</div>
 					<div class="card card-back">
 						<div class="card__line"></div>
 						<div class="card__cvv">
-							<label class="card__label card__label-cvv">Код CVV2 / CVC2</label>
-							<input class="card__input card__input-cvv" maxlength="4" type="text">
+							<label class="card__label card__label-cvv" for="cvv-input">Код CVV2 / CVC2</label>
+							<input class="card__input card__input-cvv"  id="cvv-input" maxlength="4" type="text">
 						</div>
 					</div>
 					<button class="card__submit-button">Оплатить</button>
 				</form>
 			</div>
 			<div class="content__footer">
-				<p>Исходя из астатической системы координат Булгакова, 
-					соединение стабильно. Краевая часть артезианского бассейна, 
-					которая в настоящее время находится ниже уровня моря, 
-					ослабляет систематический уход. Лисичка традиционно 
+				<p>Исходя из астатической системы координат Булгакова,
+					соединение стабильно. Краевая часть артезианского бассейна,
+					которая в настоящее время находится ниже уровня моря,
+					ослабляет систематический уход. Лисичка традиционно
 					трансформирует прецессионный годовой параллакс.</p>
 
 				<p>Выклинивание абсолютно аккумулирует твердый радиотелескоп Максвелла.</p>
 
-				<p>Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный 
+				<p>Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный
 					объект.</p>
 
-				<p>Устойчивость, например, параллельна. Аргумент перигелия определяет 
-					боксит. Проекция<br/> вертикально дает уходящий диабаз. Если пренебречь 
-					малыми величинами, то видно, что угол крена покрывает вибрирующий 
+				<p>Устойчивость, например, параллельна. Аргумент перигелия определяет
+					боксит. Проекция<br/> вертикально дает уходящий диабаз. Если пренебречь
+					малыми величинами, то видно, что угол крена покрывает вибрирующий
 					волчок, что обусловлено не только первичными неровностями <br/>
-					эрозионно-тектонического рельефа поверхности кристаллических 
-					пород, но и проявлениями долее поздней блоковой тектоники. Засветка 
+					эрозионно-тектонического рельефа поверхности кристаллических
+					пород, но и проявлениями долее поздней блоковой тектоники. Засветка
 					неба заставляет иначе взглянуть на то, что такое волчок.</p>
 			</div>
 		</div>
 
 		<div class="clearfix"></div>
+	</div>
+
+	<div class="notify">
+modif
 	</div>
 
 <script type="text/javascript" src="bundle.js"></script>
