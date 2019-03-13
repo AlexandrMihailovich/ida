@@ -32,7 +32,7 @@ import jQuery from 'jquery';
 
                 itemTitle.text(opt.title).prependTo(item);
                 itemContent.text(opt.content).appendTo(item);
-                
+
                 $this.prepend(item);
                 item.slideDown("fast");
 
@@ -47,6 +47,15 @@ import jQuery from 'jquery';
                         item.remove();
                     });
                 }, 5000);
+            });
+        },
+
+        clean : function () {
+            return this.each(function() {
+                var $items = $(this).children();
+                $items.fadeOut(function() {
+                    $(this).remove();
+                });
             });
         }
     };

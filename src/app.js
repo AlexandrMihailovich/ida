@@ -12,6 +12,8 @@ import './scss/main.scss';
 
 
 jQuery(function() {
+    'use strict';
+
     var notify = jQuery('.notify').notify();
 
     function createNotify(element, code) {
@@ -20,7 +22,7 @@ jQuery(function() {
 
         var errorMessages = {
             'ACCEPTED'      : "Успех",
-            'EMPTY_VALUE'   : "Это поле нужно заполнить обязательно.",
+            'EMPTY_VALUE'   : "Это поле обязательно нужно заполнить.",
             'LONG_VALUE'    : "Значение должно быть не более " + settings.maxLength + ' символов.',
             'SHORT_VALUE'   : "Значение должно быть не менее " + settings.minLength + ' символов.',
             'REG_ERROR'     : "Неверный формат данных.",
@@ -37,7 +39,6 @@ jQuery(function() {
         var content = errorMessages[code];
 
         notify.notify('show', {'title' : title, 'content' : content});
-        //jQuery('.notify').notify('show', {'title' : title, 'content' : content});
     }
 
     jQuery('.card_help-button').click(function(e) {
@@ -60,6 +61,12 @@ jQuery(function() {
         'reachEnd'      : function(element) {
             element.next(".card__input-number").focus();
         },
+        'regExpError'   : function () {
+            notify.notify('clean').notify('show', {
+                'title' : 'Ошибка',
+                'content' : 'Разрешены только числа(0-9).'
+            });
+        }
     });
 
     var cvv = jQuery( ".card__input-cvv" ).inputProcessor({
@@ -67,6 +74,12 @@ jQuery(function() {
         'maxLength'     : 3,
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
+        'regExpError'   : function () {
+            notify.notify('clean').notify('show', {
+                'title' : 'Ошибка',
+                'content' : 'Разрешены только числа(0-9).'
+            });
+        }
     });
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
@@ -75,23 +88,21 @@ jQuery(function() {
         'processRegExp'	: /^[a-zA-Z\s]+$/,
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
+        'regExpError'   : function () {
+            notify.notify('clean').notify('show', {
+                'title': 'Ошибка',
+                'content': 'Разрешены только буквы латинского алфавита(A-Z) и проблел, обязательно должны присутвовать два слова, имя и фамилия. Пример: CARD HOLDER.'
+            });
+        }
     });
 
 
     jQuery( "form" ).submit(function(e) {
-        jQuery( ".notify__item" ).fadeOut(function() {
-            jQuery(this).remove();
-        });;
+        notify.notify('clean');
 
         var option = {
-            'success'		: function (element) {
-                //console.log('ACCEPTED', $this);
-            },
             'error'		: function (element, code) {
-                //console.log('ERROR', elemet, code);
-
-                createNotify(element, code)
-
+                createNotify(element, code);
                 e.preventDefault();
             },
         };
