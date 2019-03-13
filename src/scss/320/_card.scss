@@ -12,13 +12,8 @@
     .card_holder {
       .card__input-holder {
         width: auto;
-
-        &::placeholder {
-
-        }
       }
     }
-
     .card__number {
       .card__input-number {
         width: 40px;
@@ -27,16 +22,14 @@
 
     }
   }
-    .card-front {
-      margin-left: 0;
-    }
+  .card-front {
+    margin-left: 0;
+  }
 
-    .card-back {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-
+  .card-back {
+    margin-left: 0;
+    margin-right: 0;
+  }
   /* card end */
 
 }
