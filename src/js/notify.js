@@ -26,14 +26,15 @@ import jQuery from 'jquery';
                 var settings = $this.data('settings');
                 var opt = $.extend({}, settings , options);
 
-                var item = $( "<div>" ).addClass('notify__item');
+                var item = $( "<div>" ).addClass('notify__item').hide();
                 var itemTitle = $( "<p>" ).addClass('notify__title');
                 var itemContent = $( "<p>" ).addClass('notify__content');
 
                 itemTitle.text(opt.title).prependTo(item);
                 itemContent.text(opt.content).appendTo(item);
-
+                
                 $this.prepend(item);
+                item.slideDown("fast");
 
                 item.click(function() {
                     item.fadeOut(function() {

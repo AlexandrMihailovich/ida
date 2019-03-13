@@ -33,6 +33,13 @@ jQuery(function() {
         //jQuery('.notify').notify('show', {'title' : title, 'content' : content});
     }
 
+    jQuery('.card_help-button').click(function(e) {
+        notify.notify('show', {
+            'title' : 'CVV2/CVC2', 
+            'content' : 'Этот трехзначный код указан на обороте карты.'
+        });
+    });
+
     var inputRejected = function(element) {
         element.addClass("card__input-error");
     };
