@@ -12,24 +12,13 @@ import './scss/main.scss';
 
 
 jQuery(function() {
-    jQuery( ".card__mouth" ).selectmenu({
-        classes: {
-          "ui-selectmenu-button": "card__input card__input-date card__mouth"
-        }
-      });
-    jQuery( ".card__year" ).selectmenu({
-        classes: {
-          "ui-selectmenu-button": "card__input card__input-date card__year"
-        }
-      });
-
-    //var notify = jQuery('.notify').notify();
+    var notify = jQuery('.notify').notify();
 
     function createNotify(elemet, code) {
 
         var settings = elemet.data('settings');
 
-        var emes = {
+        var errorMessages = {
             'ACCEPTED'      : "Успех",
             'EMPTY_VALUE'   : "Это поле нужно заполнить обязательно.",
             'LONG_VALUE'    : "Значение должно быть не более " + settings.maxLength + ' символов.',
@@ -37,20 +26,11 @@ jQuery(function() {
             'REG_ERROR'     : "Неверный формат значения",
         };
 
-        var errorMessages = {
-            "number-input-1" : emes,
-            "number-input-2" : emes,
-            "number-input-3" : emes,
-            "number-input-4" : emes,
-            "holder-input"   : emes,
-            "cvv-input"      : emes
-        };
-
         var title = elemet.attr('title');
-        var content = errorMessages[elemet.attr('name')][code];
+        var content = errorMessages[code];
 
-        //notify.notify('show', {'title' : title, 'content' : content});
-        jQuery('.notify').notify('show', {'title' : title, 'content' : content});
+        notify.notify('show', {'title' : title, 'content' : content});
+        //jQuery('.notify').notify('show', {'title' : title, 'content' : content});
     }
 
     var inputRejected = function(element) {

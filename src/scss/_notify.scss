@@ -1,0 +1,27 @@
+/* notify begin */
+.notify {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    .notify__item {
+      color: #fff;
+      position: relative;
+      background: #191c24;
+      width: 150px;
+      padding: 10px;
+      margin: 10px;
+      z-index: 999;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+      @include box-shadow(0, 0, 3px, 1px, #000);
+    }
+    .notify__title {
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .notify__content {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  }
+  /* notify end */

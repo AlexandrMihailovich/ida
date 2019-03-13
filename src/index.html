@@ -92,8 +92,11 @@
 						<div class="card__cvv">
 							<label class="card__label card__label-cvv"
 							for="cvv-input">Код CVV2 / CVC2</label>
-							<input class="card__input card__input-cvv" id="cvv-input"
-							name="cvv-input" title="Код CVV" maxlength="4" type="text">
+							<div class="card_help">
+								<input class="card__input card__input-cvv" id="cvv-input"
+								name="cvv-input" title="Код CVV" maxlength="4" type="text">
+								<a class="card_help-button">?</a>
+							</div>
 						</div>
 					</div>
 					<button class="card__submit-button">Оплатить</button>
@@ -124,9 +127,7 @@
 		<div class="clearfix"></div>
 	</div>
 
-	<div class="notify">
-
-	</div>
+	<div class="notify"></div>
 
 <script type="text/javascript" src="bundle.js"></script>
 </body>
