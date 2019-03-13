@@ -68,7 +68,7 @@ import jQuery from 'jquery';
                     //console.log('EVENT:', 'input');
                     var val = e.target.value;
 
-                    var result = test($this.val(), $this.val(), settings, 
+                    var result = test($this.val(), $this.val(), settings,
                                       $this, settings.processRegExp);
 
                     switch (result) {
@@ -77,10 +77,10 @@ import jQuery from 'jquery';
                             break;
                         case REG_ERROR:
                             e.target.value = prevVal;
-                            settings.rejected($this, val, prevVal);
+                            settings.rejected($this, val, prevVal, e);
                             break;
                         case LONG_VALUE:
-                            settings.rejected($this, val, prevVal);
+                            settings.rejected($this, val, prevVal, e);
                             break;
                         case SHORT_VALUE:
                             settings.accepted($this, val, prevVal, e);

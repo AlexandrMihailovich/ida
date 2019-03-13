@@ -84,8 +84,8 @@ jQuery(function() {
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
         'minLength'     : 4,
-        'testRegExp'	: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
-        'processRegExp'	: /^[a-zA-Z\s]+$/,
+        'testRegExp'	: /^[a-zA-Z]+\s+[a-zA-Z]+$/,// format: CARD HOLDER
+        'processRegExp'	: /^[a-zA-Z\s]+$/,// format: a-zA-Z
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
         'regExpError'   : function () {
@@ -101,6 +101,7 @@ jQuery(function() {
         notify.notify('clean');
 
         var option = {
+            'regExpError'   :function(){},
             'error'		: function (element, code) {
                 createNotify(element, code);
                 e.preventDefault();

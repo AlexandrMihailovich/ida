@@ -1,6 +1,3 @@
-$start-color: #3d94f6;
-$end-color: #1e62d0;
-
 /* card begin */
 .card {
   background: #f7f8f8;
@@ -164,7 +161,7 @@ $end-color: #1e62d0;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-family: "Open Sans";
+  font-family: "Open Sans",Helvetica,sans-serif;
   font-size:14px;
   font-weight:bold;
   padding:12px 30px;

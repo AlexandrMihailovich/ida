@@ -1,14 +1,20 @@
 /* information table begin */
 .info-table {
-    margin-top: 16px;
-    line-height: 1.7;
-    .info-table__cell {
-      width: 161px; 
-    }
-    .info-table__cell-data {
-      color: #535864; 
-      font-family: 'Open Sans',Helvetica,sans-serif;
-      letter-spacing: -0.26px;
-    }
+  margin-top: 16px;
+  line-height: 1.7;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: Arial,Helvetica,sans-serif;
+  .info-table__cell {
+    width: 161px;
   }
-  /* information table end */
+  .info-table__cell-data {
+    color: #535864;
+    font-family: 'Open Sans',Helvetica,sans-serif;
+    letter-spacing: -0.26px;
+  }
+  td, th {
+    padding: 0;
+  }
+}
+/* information table end */
