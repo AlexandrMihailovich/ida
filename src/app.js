@@ -41,7 +41,7 @@ jQuery(function() {
         notify.notify('show', {'title' : title, 'content' : content});
     }
 
-    jQuery('.card_help-button').click(function(e) {
+    jQuery('.card_help-button').click(function() {
         notify.notify('show', {
             'title' : 'CVV2/CVC2',
             'content' : 'Этот трехзначный код указан на обороте карты.'
