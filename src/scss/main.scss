@@ -6,3 +6,15 @@
 @import 'notify';
 @import 'information';
 @import 'card';
+
+/* 720 - 1000 */
+@import "720/content";
+@import "720/navigation";
+
+/* 480 - 720 */
+@import "480/content";
+@import "480/card";
+
+/* 320 - 480 */
+@import "320/navigation";
+@import "320/card";

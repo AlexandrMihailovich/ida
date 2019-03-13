@@ -4,7 +4,7 @@ import jQuery from 'jquery';
 
 import './js/jq-selectmenu';
 import './js/notify';
-//import './js/checkCardCVV';
+import './js/toggleMenu';
 import './js/inputProcessor'
 
 import './scss/main.scss';
@@ -70,7 +70,7 @@ jQuery(function() {
     });
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
-        'minLength'     : 3,
+        'minLength'     : 4,
         'testRegExp'	: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
         'processRegExp'	: /^[a-zA-Z\s]+$/,
         'accepted'		: inputAccepted,

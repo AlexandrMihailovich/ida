@@ -1,0 +1,35 @@
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  /* card begin */
+  .card {
+    width: 230px;
+    margin-top: 10px;
+
+    .card__input {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .card_holder {
+      .card__input-holder {
+        width: auto;
+      }
+    }
+    .card__number {
+      .card__input-number {
+        width: 40px;
+        margin-right: 1.55px;
+      }
+
+    }
+  }
+  .card-front {
+    margin-left: 0;
+  }
+
+  .card-back {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* card end */
+
+}
