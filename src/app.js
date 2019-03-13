@@ -72,7 +72,9 @@ jQuery(function() {
 
 
     jQuery( "form" ).submit(function(e) {
-        jQuery( ".notify" ).html("");
+        jQuery( ".notify__item" ).fadeOut(function() {
+            jQuery(this).remove();
+        });;
 
         var option = {
             'success'		: function (element) {
