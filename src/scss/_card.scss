@@ -108,6 +108,7 @@ $end-color: #1e62d0;
 
   .card_help {
     padding-right: 9px;
+    @include no-select();
     .card_help-button {
       display: inline-block;
       margin-left: -39px;
@@ -132,7 +133,7 @@ $end-color: #1e62d0;
       padding-top: 17px;
       padding-right: 9px;
     }
-    
+
   }
 }
 .card-front {

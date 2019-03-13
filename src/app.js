@@ -4,7 +4,7 @@ import jQuery from 'jquery';
 
 import './js/jq-selectmenu';
 import './js/notify';
-//import './js/checkCardCVV';
+import './js/toggleMenu';
 import './js/inputProcessor'
 
 import './scss/main.scss';
@@ -35,7 +35,7 @@ jQuery(function() {
 
     jQuery('.card_help-button').click(function(e) {
         notify.notify('show', {
-            'title' : 'CVV2/CVC2', 
+            'title' : 'CVV2/CVC2',
             'content' : 'Этот трехзначный код указан на обороте карты.'
         });
     });
@@ -63,7 +63,7 @@ jQuery(function() {
     });
     var holder = jQuery( ".card__input-holder" ).inputProcessor({
         'maxLength'     : 50,
-        'minLength'     : 3,
+        'minLength'     : 4,
         'testRegExp'	: /^[a-zA-Z]+\s+[a-zA-Z]+$/,
         'processRegExp'	: /^[a-zA-Z\s]+$/,
         'accepted'		: inputAccepted,

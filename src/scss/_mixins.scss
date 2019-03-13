@@ -25,3 +25,10 @@
   -webkit-box-shadow: $x $y $blur $spread $color;
   box-shadow: $x $y $blur $spread $color;
 }
+
+@mixin no-select() {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

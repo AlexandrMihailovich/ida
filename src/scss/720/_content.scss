@@ -1,0 +1,22 @@
+@media only screen and (min-width : 720px) and (max-width : 1000px) {
+  .container {
+    width: 700px;
+    margin: 20px auto;
+  }
+
+  /* content begin*/
+  .content {
+    width: 100%;
+    .content__info {
+    }
+    .content__footer {
+      p {
+      }
+    }
+    .content__data {
+    }
+    .form__header {
+    }
+  }
+  /* content end */
+}
