@@ -14,19 +14,26 @@ import './scss/main.scss';
 jQuery(function() {
     var notify = jQuery('.notify').notify();
 
-    function createNotify(elemet, code) {
+    function createNotify(element, code) {
 
-        var settings = elemet.data('settings');
+        var settings = element.data('settings');
 
         var errorMessages = {
             'ACCEPTED'      : "Успех",
             'EMPTY_VALUE'   : "Это поле нужно заполнить обязательно.",
             'LONG_VALUE'    : "Значение должно быть не более " + settings.maxLength + ' символов.',
             'SHORT_VALUE'   : "Значение должно быть не менее " + settings.minLength + ' символов.',
-            'REG_ERROR'     : "Неверный формат значения",
+            'REG_ERROR'     : "Неверный формат данных.",
         };
 
-        var title = elemet.attr('title');
+        if (element.attr('name') === 'holder-input')  {
+            errorMessages['REG_ERROR'] += ' Допустимы только символы латинского алфавита(A-Z) и пробел, обязательно должны присутвовать два слова, имя и фамилия. Пример: CARD HOLDER.'
+        } else if (element.attr('class') === 'card__input-number'
+            || element.attr('name') === 'cvv-input')  {
+            errorMessages['REG_ERROR'] += ' Разрешены только числа(0-9).'
+        }
+
+        var title = element.attr('title');
         var content = errorMessages[code];
 
         notify.notify('show', {'title' : title, 'content' : content});
@@ -35,7 +42,7 @@ jQuery(function() {
 
     jQuery('.card_help-button').click(function(e) {
         notify.notify('show', {
-            'title' : 'CVV2/CVC2', 
+            'title' : 'CVV2/CVC2',
             'content' : 'Этот трехзначный код указан на обороте карты.'
         });
     });
