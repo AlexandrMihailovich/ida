@@ -25,6 +25,16 @@ The page will reload if you make edits.<br>
 
 Builds the app for production to the `dist` folder.<br>
 
+## Validation
+
+[HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Falexandrmihailovich.github.io%2Fida%2Fdist%2F)
+
+[CSS](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falexandrmihailovich.github.io%2Fida%2Fdist%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=ru)
+
+[PageSpeed 100](https://developers.google.com/speed/pagespeed/insights/?hl=ru&url=https%3A%2F%2Falexandrmihailovich.github.io%2Fida%2Fdist%2F)
+
+[Mobile Friendly](https://search.google.com/test/mobile-friendly?id=YiaLtlWL3uwo_v8StANITw)
+
 ## Tests in old browsers
 
 #### Internet Explorer 9 - successful
