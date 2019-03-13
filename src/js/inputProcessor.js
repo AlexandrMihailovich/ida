@@ -68,7 +68,9 @@ import jQuery from 'jquery';
                     //console.log('EVENT:', 'input');
                     var val = e.target.value;
 
-                    var result = test($this.val(), $this.val(), settings, $this, settings.processRegExp);
+                    var result = test($this.val(), $this.val(), settings, 
+                                      $this, settings.processRegExp);
+
                     switch (result) {
                         case EMPTY_VALUE:
                             prevVal = e.target.value;
@@ -103,7 +105,7 @@ import jQuery from 'jquery';
                         settings.accepted($this, $this.val(), prevVal, e);
                     } else {
                         //console.log('ERROR', result, $this);
-                        settings.rejected($this, $this.val(), prevVal);
+                        settings.rejected($this, $this.val(), prevVal, e);
                     }
                 })
             });

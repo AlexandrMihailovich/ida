@@ -50,7 +50,7 @@ jQuery(function() {
 
     var cvv = jQuery( ".card__input-cvv" ).inputProcessor({
         'minLength'     : 3,
-        'maxLength'     : 4,
+        'maxLength'     : 3,
         'accepted'		: inputAccepted,
         'rejected'		: inputRejected,
     });
